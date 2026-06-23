@@ -83,8 +83,10 @@ function renderMemories(memories){
     const video = (memory.media_kind === 'video') || (memory.file_type || '').startsWith('video/');
     card.innerHTML = `
       <div class="media-wrap" onclick='openLightbox(${JSON.stringify(memory).replace(/'/g,"&#39;")})'>
-        ${video ? `<video src="${memory.file_url}" muted playsinline preload="metadata"></video><span class="badge">🎥 Video</span>` : `<img src="${memory.file_url}" alt="Wedding memory"   decoding="async"
-  onload="this.classList.add('loaded')""><span class="badge">📷 Photo</span>`}
+${video 
+  ? `<video src="${memory.file_url}" muted playsinline preload="metadata"></video><span class="badge">🎥 Video</span>` 
+  : `<img src="${memory.file_url}" alt="Wedding memory" decoding="async" onload="this.classList.add('loaded')"><span class="badge">📷 Photo</span>`
+}
       </div>
       <div class="memory-body">
         <div class="guest">${memory.guest_name ? `🤍 ${escapeHtml(memory.guest_name)}` : '🤍 Wedding Guest'}</div>
