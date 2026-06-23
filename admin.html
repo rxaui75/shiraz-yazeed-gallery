@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Wall Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>.admin{padding:30px 18px}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.admin-grid{display:grid;gap:12px}.admin-card{display:grid;grid-template-columns:88px 1fr;gap:12px;background:#fff;border:1px solid rgba(184,149,88,.22);border-radius:18px;padding:12px;box-shadow:0 10px 24px rgba(0,0,0,.08)}.admin-card img,.admin-card video{width:88px;height:88px;object-fit:cover;border-radius:12px}.admin-card h4{color:#4f5f35;margin-bottom:5px}.admin-card p{font-size:12px;color:#6f6252;margin:3px 0}.danger{background:#74131b!important;border-color:#74131b!important;color:white!important}.login{min-height:100vh;display:grid;place-items:center;padding:22px;background:linear-gradient(180deg,#fbf7ef,#fffdf8)}.login-card{background:white;border-radius:24px;padding:24px;box-shadow:0 14px 35px rgba(0,0,0,.13);width:min(360px,100%);text-align:center}.login-card h1{font-family:'Cormorant Garamond',serif;font-size:38px;margin-bottom:12px}.hidden{display:none!important}</style>
+</head>
+<body>
+  <div id="login" class="login">
+    <div class="login-card">
+      <h1>Admin Access</h1>
+      <input id="password" type="password" placeholder="Password">
+      <button class="btn primary full" onclick="loginAdmin()">Enter</button>
+      <p id="loginMsg" class="status"></p>
+    </div>
+  </div>
+  <main id="adminPage" class="page admin hidden">
+    <div class="admin-top"><div><span class="small gold">Shiraz & Yazeed</span><h2>Admin Memories</h2></div><a class="btn" href="index.html">Back</a></div>
+    <button class="btn primary full" onclick="downloadCSV()">Download List</button>
+    <div id="adminList" class="admin-grid" style="margin-top:16px"></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

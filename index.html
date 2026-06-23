@@ -12,11 +12,12 @@
 <body>
   <main class="page">
     <section class="hero" id="home">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
+      <div class="hero-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-content reveal-now">
         <div class="small">Shiraz & Yazeed</div>
         <h1>Memory Wall</h1>
-        <p>Every guest sees this day through a different lens.<br>Help us collect every beautiful memory.</p>
+        <p>Every guest sees this day through a different lens.<br>Thank you for sharing yours.</p>
         <div class="hero-actions">
           <button class="btn primary" onclick="openUploader()">📸 Share Your Memory</button>
           <a class="btn ghost" href="#wall">View Memory Wall</a>
@@ -26,10 +27,17 @@
         <span id="memoryCount">0</span>
         <small>Memories Shared 🤍</small>
       </div>
+      <a class="admin-link" href="admin.html">Admin</a>
     </section>
 
-    <section class="upload-section" id="upload">
-      <h2>Share your moments</h2>
+    <section class="intro-card reveal">
+      <span class="gold-label">A living wedding album</span>
+      <h2>Help us collect every beautiful moment.</h2>
+      <p>Upload photos or short videos from the celebration. Your memory will appear here for everyone to enjoy.</p>
+    </section>
+
+    <section class="upload-section reveal" id="upload">
+      <h2>Share your memory</h2>
       <p class="muted">Photos and short videos are welcome.</p>
       <form id="uploadForm" class="upload-card">
         <input id="guestName" type="text" maxlength="40" placeholder="Your name (optional)" />
@@ -42,14 +50,12 @@
         <input id="fileInput" type="file" accept="image/*,video/*" multiple hidden />
         <div id="selectedFiles" class="selected-files"></div>
         <button class="btn primary full" type="submit">Upload Memories</button>
-        <div id="progress" class="progress" hidden>
-          <div id="progressBar"></div>
-        </div>
+        <div id="progress" class="progress" hidden><div id="progressBar"></div></div>
         <p id="status" class="status"></p>
       </form>
     </section>
 
-    <section class="wall-section" id="wall">
+    <section class="wall-section reveal" id="wall">
       <div class="section-head">
         <div>
           <span class="small gold">Live Wedding Album</span>
@@ -60,11 +66,27 @@
       <div id="gallery" class="gallery"></div>
       <div id="emptyState" class="empty">No memories yet. Be the first to share 🤍</div>
     </section>
+
+    <footer class="rand-footer">
+      <div>Created with 🤍 for Shiraz &amp; Yazeed</div>
+      <button onclick="openRandSheet()">by Rand Alomari</button>
+      <small>© 2026 All Rights Reserved</small>
+    </footer>
   </main>
 
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <button class="close" onclick="closeLightbox()">×</button>
     <div id="lightboxContent" class="lightbox-content" onclick="event.stopPropagation()"></div>
+  </div>
+
+  <div id="randSheet" class="sheet-backdrop" onclick="closeRandSheet()">
+    <div class="sheet" onclick="event.stopPropagation()">
+      <div class="sheet-handle"></div>
+      <h3>Rand Studio</h3>
+      <p>Digital invitations, wedding websites, and memory walls.</p>
+      <a class="btn primary full" href="https://wa.me/966546210210?text=Hello%20Rand%2C%20I%20would%20like%20to%20ask%20about%20a%20digital%20wedding%20invitation%20or%20Memory%20Wall%20🤍" target="_blank">WhatsApp</a>
+      <a class="btn full" href="mailto:randomari@hotmail.com?subject=Digital%20Invitation%20Inquiry">Email</a>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

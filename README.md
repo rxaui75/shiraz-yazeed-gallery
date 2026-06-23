@@ -1,15 +1,12 @@
 # Shiraz & Yazeed Memory Wall
 
-Upload these files to GitHub Pages.
+Upload all files to the GitHub repository root, then enable GitHub Pages from Settings → Pages → Deploy from branch → main → /(root).
 
-Supabase setup:
-- Bucket: `wedding-memories` and make it Public.
-- Table: `memories` columns:
-  - `id` uuid primary key default `gen_random_uuid()`
-  - `file_url` text
-  - `file_type` text
-  - `guest_name` text
-  - `message` text
-  - `created_at` timestamp default `now()`
+Live URL after publishing:
+https://rxaui75.github.io/shiraz-yazeed-gallery/
 
-If uploads do not work, open Supabase SQL Editor and run `supabase-policies.sql`.
+Admin page:
+/admin.html
+Default password is in admin.js: rand2026
+
+If upload/view does not work, run supabase-policies.sql in Supabase SQL Editor.
