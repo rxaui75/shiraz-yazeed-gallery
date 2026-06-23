@@ -67,11 +67,23 @@
       <div id="emptyState" class="empty">No memories yet. Be the first to share 🤍</div>
     </section>
 
-    <footer class="rand-footer">
-      <div>Created with 🤍 for Shiraz &amp; Yazeed</div>
-      <button onclick="openRandSheet()">by Rand Alomari</button>
-      <small>© 2026 All Rights Reserved</small>
-    </footer>
+<footer class="rand-footer">
+    <div>Crafted with 🤍 for</div>
+
+    <div style="
+        font-family:'Great Vibes',cursive;
+        font-size:34px;
+        margin-top:6px;
+        color:#4f5f35;">
+        Shiraz &amp; Yazeed
+    </div>
+
+    <button onclick="openRandSheet()">
+        by Rand Alomari
+    </button>
+
+    <small>© 2026 All Rights Reserved</small>
+</footer>
   </main>
 
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -79,15 +91,36 @@
     <div id="lightboxContent" class="lightbox-content" onclick="event.stopPropagation()"></div>
   </div>
 
-  <div id="randSheet" class="sheet-backdrop" onclick="closeRandSheet()">
-    <div class="sheet" onclick="event.stopPropagation()">
-      <div class="sheet-handle"></div>
-      <h3>Rand Studio</h3>
-      <p>Digital invitations, wedding websites, and memory walls.</p>
-      <a class="btn primary full" href="https://wa.me/966546210210?text=Hello%20Rand%2C%20I%20would%20like%20to%20ask%20about%20a%20digital%20wedding%20invitation%20or%20Memory%20Wall%20🤍" target="_blank">WhatsApp</a>
-      <a class="btn full" href="mailto:randomari@hotmail.com?subject=Digital%20Invitation%20Inquiry">Email</a>
-    </div>
+<div id="randSheet" class="sheet-backdrop" onclick="closeRandSheet()">
+  <div class="sheet" onclick="event.stopPropagation()">
+
+    <div class="sheet-handle"></div>
+
+    <h3>Rand Studio</h3>
+
+    <p>
+      Creating elegant digital wedding invitations,
+      memory walls, graduation books,
+      and custom event websites.
+    </p>
+
+    <a class="btn primary full"
+      href="https://wa.me/966546210210?text=مرحباً رند، أرغب بالاستفسار عن تصميم دعوة زفاف رقمية أو Memory Wall 🤍%0A%0AHello Rand, I would like to inquire about a digital wedding invitation or Memory Wall 🤍"
+      target="_blank">
+      WhatsApp
+    </a>
+
+    <a class="btn full"
+      href="mailto:randomari@hotmail.com?subject=Digital Invitation Inquiry">
+      Email
+    </a>
+
+    <small style="margin-top:18px;display:block;color:#8b7d67;">
+      © 2026 Rand Studio
+    </small>
+
   </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
