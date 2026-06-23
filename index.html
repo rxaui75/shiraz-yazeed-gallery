@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shiraz & Yazeed Memory Wall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="small">Shiraz & Yazeed</div>
+        <h1>Memory Wall</h1>
+        <p>Every guest sees this day through a different lens.<br>Help us collect every beautiful memory.</p>
+        <div class="hero-actions">
+          <button class="btn primary" onclick="openUploader()">📸 Share Your Memory</button>
+          <a class="btn ghost" href="#wall">View Memory Wall</a>
+        </div>
+      </div>
+      <div class="counter-card">
+        <span id="memoryCount">0</span>
+        <small>Memories Shared 🤍</small>
+      </div>
+    </section>
+
+    <section class="upload-section" id="upload">
+      <h2>Share your moments</h2>
+      <p class="muted">Photos and short videos are welcome.</p>
+      <form id="uploadForm" class="upload-card">
+        <input id="guestName" type="text" maxlength="40" placeholder="Your name (optional)" />
+        <textarea id="message" maxlength="160" placeholder="Leave a little message (optional)"></textarea>
+        <label class="file-box" for="fileInput">
+          <span>＋</span>
+          <strong>Choose photos or videos</strong>
+          <small>You can select multiple files</small>
+        </label>
+        <input id="fileInput" type="file" accept="image/*,video/*" multiple hidden />
+        <div id="selectedFiles" class="selected-files"></div>
+        <button class="btn primary full" type="submit">Upload Memories</button>
+        <div id="progress" class="progress" hidden>
+          <div id="progressBar"></div>
+        </div>
+        <p id="status" class="status"></p>
+      </form>
+    </section>
+
+    <section class="wall-section" id="wall">
+      <div class="section-head">
+        <div>
+          <span class="small gold">Live Wedding Album</span>
+          <h2>Memory Wall</h2>
+        </div>
+        <button class="btn small-btn" onclick="loadMemories()">Refresh</button>
+      </div>
+      <div id="gallery" class="gallery"></div>
+      <div id="emptyState" class="empty">No memories yet. Be the first to share 🤍</div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="close" onclick="closeLightbox()">×</button>
+    <div id="lightboxContent" class="lightbox-content" onclick="event.stopPropagation()"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
